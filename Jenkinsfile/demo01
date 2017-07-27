@@ -16,11 +16,24 @@ import java.net.URL
 
 pipeline {
     agent any
+       
+       tools {
+              
+              maven 'Maven 3.3.9'
+              jdk 'java8'
+       }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                     echo "M2_HOME = ${M2_HOME}"
+                     /**
+                     git branch: 'master', credentialsId: ' github2', url: 'https://github.com/tpernice/spring-mvc-showcase.git '
+                     def mvnHome = tool 'M3'
+                     sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify"
+                     '**/target/foobar/TEST-*.xml'])
+                     */
+                     echo 'Building..'
             }
         }
         stage('Test') {
