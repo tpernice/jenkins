@@ -30,8 +30,7 @@ pipeline {
                      /**
                      git branch: 'master', credentialsId: ' github2', url: 'https://github.com/tpernice/spring-mvc-showcase.git '
                      def mvnHome = tool 'M3'
-                     sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify"
-                     '**/target/foobar/TEST-*.xml'])
+                     sh "${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify" 
                      */
                      echo 'Building..'
             }
